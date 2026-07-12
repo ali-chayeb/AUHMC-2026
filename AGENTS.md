@@ -12,11 +12,13 @@
 3. اقرأ [README.md](README.md) للنظرة العامة
 4. اقرأ [ARCHITECTURE.md](ARCHITECTURE.md) لهيكلية الكود
 5. اقرأ [DATA-MODEL.md](DATA-MODEL.md) لنموذج البيانات
+6. اقرأ [DEPLOYMENT-PLAN.md](DEPLOYMENT-PLAN.md) لترى خطة النشر والتطوير المستقبلية
 
 ### نهاية أي تعديل
 بعد أي تغيير في الكود أو التوثيق، يجب:
 1. **تحديث الملف التوثيقي المناسب** إذا تغيرت الوظيفة
 2. **إضافة مدخل في [CHANGELOG.md](CHANGELOG.md)** باستخدام القالب الموجود (الأحدث في الأعلى، التاريخ الحقيقي، من أنت، ماذا تغير، هل تم تحديث التوثيق)
+3. **تحديث قائمة التحقق في [DEPLOYMENT-PLAN.md](DEPLOYMENT-PLAN.md)** إذا أنجزت أي مرحلة من خطة النشر
 
 ---
 
@@ -34,15 +36,19 @@
 
 ```
 AUHMC-2026/
-├── index.html          # الهيكل الرئيسي — جميع الأقسام
-├── styles.css          # التصميم — متغيرات CSS، Grid، Responsive
-├── app.js              # المنطق البرمجي — IIFE، جميع الوظائف
-├── assets/images/      # مجلد الصور
-├── README.md           # نظرة عامة
-├── ARCHITECTURE.md     # هيكلية الكود
-├── AGENTS.md           # هذا الملف — دليل AI
-├── DATA-MODEL.md       # نموذج البيانات
-└── CHANGELOG.md        # سجل التغييرات
+├── index.html              # الهيكل الرئيسي — جميع الأقسام
+├── styles.css              # التصميم — متغيرات CSS، Grid، Responsive
+├── app.js                  # المنطق البرمجي — IIFE، جميع الوظائف
+├── admin.html              # لوحة تحكم المدير
+├── admin-styles.css        # تصميم لوحة التحكم
+├── admin.js                # منطق لوحة التحكم
+├── assets/images/          # مجلد الصور
+├── README.md               # نظرة عامة
+├── ARCHITECTURE.md         # هيكلية الكود
+├── AGENTS.md               # هذا الملف — دليل AI
+├── DATA-MODEL.md           # نموذج البيانات
+├── DEPLOYMENT-PLAN.md      # خطة النشر والتحول إلى نظام كامل
+└── CHANGELOG.md            # سجل التغييرات
 ```
 
 ---

@@ -7,6 +7,75 @@
 
 ---
 
+## 2026-07-12 — Cline (AI Assistant) — الإضافة الرابعة
+
+### بناء Backend كامل (Node.js + Express + SQLite)
+
+تم إنشاء الخادم الخلفي (Backend) الكامل للموقع وتحويله من موقع ثابت إلى نظام Full-Stack.
+
+### الملفات الجديدة:
+- `package.json` — تبعيات المشروع (express, better-sqlite3, bcryptjs, jsonwebtoken, multer, cors, dotenv, express-rate-limit)
+- `.env` — المتغيرات السرية (JWT_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD)
+- `.gitignore` — تجاهل node_modules, .env, data, uploads
+- `server/server.js` — الخادم الرئيسي (Express + CORS + Rate Limiting + Multer للرفع)
+- `server/database.js` — قاعدة البيانات (SQLite) مع 7 جداول: users, registrations, content, tracks, schedule, committees, workshops, sponsors
+- `server/middleware/auth.js` — التحقق من صلاحية الدخول (JWT)
+- `server/routes/auth.js` — API المصادقة (تسجيل دخول، تحقق، تغيير كلمة المرور)
+- `server/routes/content.js` — API إدارة المحتوى (قراءة/تحديث/إضافة/حذف لكل الأقسام)
+- `server/routes/registrations.js` — API التسجيلات (تسجيل جديد، عرض، إحصائيات، حذف)
+- `public/` — مجلد للملفات الأمامية (index.html, styles.css, app.js, admin.html, admin-styles.css, admin.js, uploads/)
+
+### الميزات الجديدة في Backend:
+- ✅ **مصادقة حقيقية** (JWT Tokens) — بريد + كلمة سر مشفرة
+- ✅ **قاعدة بيانات SQLite** — 7 جداول متكاملة
+- ✅ **API إدارة المحتوى** — قراءة/تحديث/إضافة/حذف لكل الأقسام
+- ✅ **API التسجيلات** — تسجيل جديد + عرض + إحصائيات + حذف
+- ✅ **رفع الصور** — Multer مع حماية نوع الملف وحجمه
+- ✅ **Rate Limiting** — حماية من الهجمات
+- ✅ **معالجة الأخطاء** — رسائل خطأ بالعربية
+
+### نتائج الاختبارات:
+- ✅ API /api/content → يعيد بيانات JSON كاملة
+- ✅ API /api/auth/login → يعيد JWT Token
+- ✅ API /api/registrations → تسجيل وحفظ في قاعدة البيانات
+- ✅ API /api/registrations/stats → إحصائيات دقيقة (total, today)
+- ✅ API /api/registrations مع Auth → قائمة التسجيلات
+
+### تحديث التكامل بين الملفات:
+- `AGENTS.md` — تم تحديث البروتوكول ليشمل DEPLOYMENT-PLAN.md في بداية الجلسة ونهايتها
+- `README.md` — تم تحديث هيكل الملفات والتوثيق ليشمل DEPLOYMENT-PLAN.md
+- `DEPLOYMENT-PLAN.md` — تم إنشاء خطة النشر الكاملة كدليل ذاتي لأي AI مستقبلي
+
+### التوثيق:
+- Docs synced: yes (AGENTS.md, README.md, DEPLOYMENT-PLAN.md, CHANGELOG.md)
+
+---
+
+## 2026-07-12 — Cline (AI Assistant) — الإضافة الثالثة
+
+### إضافة خطة النشر الكاملة (Deployment Plan)
+- تم إنشاء ملف `DEPLOYMENT-PLAN.md` — خطة متكاملة لتحويل الموقع من Static إلى Full-Stack
+- الملف يحتوي على 5 مراحل مفصلة مع أكواد جاهزة للنسخ واللصق
+- مصمم ليكون دليلاً ذاتياً لأي نظام ذكاء اصطناعي لمواصلة العمل
+
+### محتويات خطة النشر:
+- **المرحلة 1:** تجهيز السيرفر (Plesk) — خطوات تفصيلية مع الصور التوضيحية
+- **المرحلة 2:** بناء Backend كامل (Node.js + Express + SQLite)
+  - ملفات جاهزة: `server.js`, `database.js`, `routes/auth.js`, `routes/content.js`, `routes/registrations.js`, `middleware/auth.js`
+  - `package.json` مع جميع التبعيات
+  - `.env` للمتغيرات السرية
+  - `.gitignore` للملفات غير الضرورية
+- **المرحلة 3:** تحديث Frontend للاتصال بالـ API
+  - كود جاهز لتحديث `app.js` و `admin.js` ونموذج التسجيل
+- **المرحلة 4:** رفع الملفات إلى Plesk (FTP + File Manager)
+- **المرحلة 5:** الاختبار والتشغيل
+- **ملحق:** أوامر سريعة واستكشاف الأخطاء
+
+### التوثيق:
+- Docs synced: yes (DEPLOYMENT-PLAN.md, CHANGELOG.md)
+
+---
+
 ## 2026-07-12 — Cline (AI Assistant) — الإضافة الثانية
 
 ### إضافة لوحة تحكم المدير (Admin Panel) كاملة
