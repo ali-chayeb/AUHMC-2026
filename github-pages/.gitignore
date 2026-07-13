@@ -1,0 +1,9 @@
+# GitHub Pages Deployment
+# This folder contains static files for GitHub Pages deployment
+
+# No node_modules needed (static site only)
+# No .env files
+# No server files
+
+# Keep folder structure
+!.gitkeep

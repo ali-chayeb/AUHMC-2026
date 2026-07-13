@@ -2,8 +2,41 @@
 ## من موقع ثابت (Static) إلى موقع نظامي (Full-Stack) على Plesk
 
 > **تاريخ الإنشاء:** 2026-07-12
+> **آخر تحديث:** 2026-07-13
 > **الهدف:** تحويل موقع AUHMC 2026 من موقع HTML/CSS/JS ثابت إلى موقع نظامي كامل مع Backend وقاعدة بيانات، ونشره على سيرفر Plesk.
 > **ملاحظة:** هذا الملف مصمم ليكون دليلاً ذاتياً لأي نظام ذكاء اصطناعي لمواصلة العمل من حيث توقف السابق.
+
+---
+
+## 📊 الوضع الحالي (2026-07-13)
+
+### ما تم إنجازه:
+- ✅ **الموقع منشور على GitHub Pages** — https://ali-chayeb.github.io/AUHMC-2026/
+- ✅ **نسخة مستقلة (Standalone)** — تعمل بدون Backend في مجلد `github-pages/`
+- ✅ **Backend كامل** — Node.js + Express + SQLite في مجلد `server/`
+- ✅ **لوحة تحكم** — تعمل محلياً عبر localStorage
+- ✅ **تسجيلات محلية** — تُحفظ في localStorage كاحتياطي
+
+### البنية الحالية:
+```
+AUHMC-2026/
+├── public/                  # للعمل المحلي مع Backend
+│   ├── index.html
+│   ├── app.js (معدل ليعمل standalone)
+│   ├── admin.html
+│   └── ...
+├── server/                  # Backend كامل (Node.js + Express)
+│   ├── server.js
+│   ├── database.js
+│   └── routes/
+├── github-pages/            # نسخة GitHub Pages (بدون Backend)
+│   ├── index.html
+│   ├── app.js (مستقل تماماً)
+│   ├── admin.html
+│   └── admin.js (مستقل تماماً)
+├── deploy-github-pages.sh   # سكريبت النشر
+└── ...
+```
 
 ---
 

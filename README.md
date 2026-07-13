@@ -51,13 +51,37 @@
 
 ## 🚀 بدء الاستخدام
 
-لا توجد أي خطوات بناء أو تثبيت. الموقع عبارة عن ملفات HTML/CSS/JS ثابتة.
+### الخيار 1: GitHub Pages (موصى به)
+
+الموقع منشور على GitHub Pages ويعمل بدون خادم:
+
+```bash
+# الموقع مباشرة
+https://ali-chayeb.github.io/AUHMC-2026/
+
+# لوحة التحكم
+https://ali-chayeb.github.io/AUHMC-2026/admin.html
+# كلمة المرور: admin2026
+```
+
+### الخيار 2: العمل المحلي مع Backend
+
+```bash
+# تشغيل السيرفر محلياً
+npm start
+
+# السيرفر يعمل على: http://localhost:3000
+# الموقع: http://localhost:3000
+# لوحة التحكم: http://localhost:3000/admin
+```
+
+### الخيار 3: ملفات ثابتة فقط
 
 ```bash
 # فتح الموقع مباشرة
 open index.html
 
-# أو عبر خادم محلي
+# أو عبر خادم محلي بسيط
 python3 -m http.server 8000
 # ثم زيارة http://localhost:8000
 ```

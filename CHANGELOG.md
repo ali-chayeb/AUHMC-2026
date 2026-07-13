@@ -7,31 +7,46 @@
 
 ---
 
-## 2026-07-13 — Cline (AI Assistant) — الاختبار والتوحيد
+## 2026-07-13 — Cline (AI Assistant) — إنشاء نسخة GitHub Pages
 
-### اختبار شامل للـ API وتوحيد هيكل المشروع
+### إنشاء نسخة مستقلة تعمل بدون Backend
 
-تم إجراء اختبار كامل لجميع نقاط API والتأكد من عملها، وتوحيد هيكل الملفات بحذف النسخ القديمة من الجذر.
+تم إنشاء نسخة كاملة من الموقع تعمل على GitHub Pages بدون الحاجة إلى خادم خلفي، مع الحفاظ على إمكانية العمل مع Backend محلياً.
 
 ### التغييرات:
-- ✅ **اختبار API** — جميع النقاط تعمل بنجاح (200 OK):
-  - `GET /api/content` → يعيد JSON كامل للمحتوى
-  - `POST /api/auth/login` → يعيد JWT Token
-  - `GET /api/registrations/stats` → إحصائيات دقيقة
-  - `GET /` → الصفحة الرئيسية
-  - `GET /admin` → لوحة التحكم
-- ✅ **توحيد هيكل المشروع** — حذف الملفات المكررة من الجذر:
-  - `index.html`, `styles.css`, `app.js` → بقيت فقط في `public/`
-  - `admin.html`, `admin-styles.css`, `admin.js` → بقيت فقط في `public/`
-  - تم أخذ نسخة احتياطية في `backup-root/`
-- ✅ **السيرفر يعمل محلياً** على `http://localhost:3000`
+- ✅ **إنشاء مجلد `github-pages/`** — نسخة مستقلة للموقع:
+  - `index.html`, `styles.css`, `app.js` — الموقع الرئيسي (بدون API)
+  - `admin.html`, `admin-styles.css`, `admin.js` — لوحة تحكم مستقلة
+  - `README.md` — تعليمات النشر على GitHub Pages
+- ✅ **تعديل `public/app.js`** — جعله يعمل بشكل مستقل:
+  - إزالة الاعتماد على API
+  - استخدام بيانات ثابتة مدمجة
+  - دعم localStorage للتعديلات
+  - حفظ التسجيلات محلياً كاحتياطي
+- ✅ **تعديل `github-pages/admin.js`** — لوحة تحكم مستقلة:
+  - إزالة الاعتماد على API
+  - حفظ جميع البيانات في localStorage
+  - عرض التسجيلات من localStorage
+- ✅ **إنشاء `deploy-github-pages.sh`** — سكريبت نشر تلقائي:
+  - نسخ الملفات وتجهيزها للنشر
+  - خيار النشر اليدوي أو عبر Git
+- ✅ **الموقع يعمل على GitHub Pages** — https://ali-chayeb.github.io/AUHMC-2026/
+
+### الميزات الجديدة:
+- ✅ الموقع يعمل كملفات ثابتة (Static Site)
+- ✅ لا يحتاج إلى Node.js أو قاعدة بيانات
+- ✅ لوحة تحكم كاملة تعمل محلياً
+- ✅ التعديلات تُحفظ في المتصفح
+- ✅ يمكن ربطه بـ Backend لاحقاً عند الحاجة
 
 ### أسماء الملفات المتأثرة:
-- `backup-root/*` — النسخ الاحتياطية للملفات القديمة
+- `github-pages/` — مجلد جديد للنسخة المستقلة
+- `public/app.js` — تعديل ليعمل بدون API
+- `deploy-github-pages.sh` — سكريبت النشر
 - `CHANGELOG.md` — هذا التحديث
 
 ### حالة التوثيق:
-- Docs synced: yes (CHANGELOG.md)
+- Docs synced: yes (CHANGELOG.md, github-pages/README.md)
 
 ---
 
