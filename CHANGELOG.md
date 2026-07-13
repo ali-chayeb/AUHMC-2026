@@ -7,6 +7,34 @@
 
 ---
 
+## 2026-07-13 — Cline (AI Assistant) — الاختبار والتوحيد
+
+### اختبار شامل للـ API وتوحيد هيكل المشروع
+
+تم إجراء اختبار كامل لجميع نقاط API والتأكد من عملها، وتوحيد هيكل الملفات بحذف النسخ القديمة من الجذر.
+
+### التغييرات:
+- ✅ **اختبار API** — جميع النقاط تعمل بنجاح (200 OK):
+  - `GET /api/content` → يعيد JSON كامل للمحتوى
+  - `POST /api/auth/login` → يعيد JWT Token
+  - `GET /api/registrations/stats` → إحصائيات دقيقة
+  - `GET /` → الصفحة الرئيسية
+  - `GET /admin` → لوحة التحكم
+- ✅ **توحيد هيكل المشروع** — حذف الملفات المكررة من الجذر:
+  - `index.html`, `styles.css`, `app.js` → بقيت فقط في `public/`
+  - `admin.html`, `admin-styles.css`, `admin.js` → بقيت فقط في `public/`
+  - تم أخذ نسخة احتياطية في `backup-root/`
+- ✅ **السيرفر يعمل محلياً** على `http://localhost:3000`
+
+### أسماء الملفات المتأثرة:
+- `backup-root/*` — النسخ الاحتياطية للملفات القديمة
+- `CHANGELOG.md` — هذا التحديث
+
+### حالة التوثيق:
+- Docs synced: yes (CHANGELOG.md)
+
+---
+
 ## 2026-07-12 — Cline (AI Assistant) — الإضافة الرابعة
 
 ### بناء Backend كامل (Node.js + Express + SQLite)
